@@ -21,12 +21,18 @@
             <button type="button" onclick="buttonInputPromedio()".value=''>
                 Agregar a la lista
             </button>
-            <p id="listaUser"></p>
+            <p id="listaUserP"></p>
 
             <button type="button" onclick="buttonPromedio()".value=''>
                 Calcular el promedio 
             </button>
             <p id="resultadoPromedio"></p>
+
+            <h3>Mediana</h3>
+            <label for="inputMediana">Ingresa tus datos: </label>
+            <input id="inputMediana" type="text" placeholder="Ej: 20, 10, 50" >
+            <button type="button" onclick="calcularMediana()">Calcular la mediana</button>
+            <p id="resultadoMediana"></p>
         </form>
     </section>
     <script src="./script.js"></script>
