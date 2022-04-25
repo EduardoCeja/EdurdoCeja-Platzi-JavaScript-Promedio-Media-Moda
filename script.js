@@ -1,4 +1,4 @@
-/*Promedio*/
+/*********************************************Promedio****************************************************/
 
 //Declaramos la variable lista con el array
 
@@ -29,7 +29,7 @@ function buttonPromedio() {
 }
 
 
-/*Mediana*/
+/********************************************Mediana******************************************************/
 
 function calcularMediaAritmetica(lista) {
     const sumaLista = lista.reduce(function (valorAcumulado = 0, nuevoElemento) {
@@ -78,3 +78,67 @@ function calcularMediaAritmetica(lista) {
   }
 
 
+/***********************************************Moda********************************************************/
+
+const listaModa = [1,2,3,1,2,3,4,2,2,2,1]
+
+//Contar cuantas veces aparece cada numero en el array
+
+//Se crea un objeto vacio para irlo rellenando con un metodo
+const lista1Count = {};
+
+//map() metodo que recorre todo el array listaModa
+listaModa.map(
+  function (elemento){
+    if(lista1Count[elemento]){
+      lista1Count[elemento] =  lista1Count[elemento] +1;
+    } else {
+    lista1Count[elemento] =1;
+    }
+  }
+);
+
+//Convertir el objeto a Array
+//Utiliza la funcion .sort() para buscar y iterar por cada uno de los elementos y encontrar la posicion de nuestro array que mas veces el numero mas grande en lista1Count
+const lista1Array = Object.entries(lista1Count).sort(
+  function  (elementoA, elementoB){
+    return elementoA[1] - elementoB[1];
+  }
+);
+
+const moda = lista1Array[lista1Array.length - 1];
+/*************************************Interaccion de la Moda en HTML********************************/
+
+function calcularModa(){
+   //Se captura los datos del html y se guardan los valores dentro de una variable
+  const entradaModa = document.getElementById("inputModa");
+  const modaValue= entradaModa.value
+  //Al ser un String los valores capturados, se procede a convertir el formato a Number 
+  let arrayModa = Array.from(modaValue.split(","),Number);
+
+  //map() metodo que recorre todo el array listaModa
+  const lista2Count={};
+  arrayModa.map(
+    function (elemento){
+      if(lista2Count[elemento]){
+        lista2Count[elemento] =  lista2Count[elemento] +1;
+      } else {
+      lista2Count[elemento] =1;
+      }
+    }
+  );
+
+//Convertir el objeto a Array
+//Utiliza la funcion .sort() para buscar y iterar por cada uno de los elementos y encontrar la posicion de nuestro array que mas veces el numero mas grande en lista1Count
+const lista2Array = Object.entries(lista2Count).sort(
+  function  (elementoA, elementoB){
+    return elementoA[1] - elementoB[1];
+  }
+);
+
+const moda2 = lista2Array[lista2Array.length - 1];
+const mostrarResultadoModa = document.getElementById("resultadoModa");
+
+mostrarResultadoModa.innerText = `La moda es ${moda2[0]} `
+
+}

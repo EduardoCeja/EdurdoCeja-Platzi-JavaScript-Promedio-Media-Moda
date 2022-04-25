@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
     <title>Promedio, Mediana y Moda </title>
 </head>
 <body>
@@ -11,30 +12,51 @@
         <h1>Promedio, Moda y Media</h1>
         <p>Este es el tercer taller del curso de JavaScript Practico</p>
     </header>
-    <section>
-        <form action="">
-            <h3>Promedio</h3>
+        <section>
+            <form action="">
+                <!--*********************************Promedio*********************************************-->
+                <div class="flexbox-item">
+                    <div class="card-item">
+                        <h3>Promedio</h3>
+                        <div class="contenedor">
+                            <label for="InputPromedio">Escribe en el recuadro el primer dato</label>
+                            <input id="InputPromedio" placeholder="Agrega un dato y presiona el boton `Agregar a la lista`"type="number"/>
 
-            <label for="InputPromedio">Escribe en el recuadro el primer dato</label>
-            <input id="InputPromedio" type="number"/>
+                            <button type="button"onclick="buttonInputPromedio()".value=''>
+                                Agregar a la lista
+                            </button>
+                            <p id="listaUserP"></p>
 
-            <button type="button" onclick="buttonInputPromedio()".value=''>
-                Agregar a la lista
-            </button>
-            <p id="listaUserP"></p>
-
-            <button type="button" onclick="buttonPromedio()".value=''>
-                Calcular el promedio 
-            </button>
-            <p id="resultadoPromedio"></p>
-
-            <h3>Mediana</h3>
-            <label for="inputMediana">Ingresa tus datos: </label>
-            <input id="inputMediana" type="text" placeholder="Ej: 20, 10, 50" >
-            <button type="button" onclick="calcularMediana()">Calcular la mediana</button>
-            <p id="resultadoMediana"></p>
-        </form>
-    </section>
+                            <button type="button" onclick="buttonPromedio()".value=''>
+                                Calcular el promedio 
+                            </button>
+                            <p id="resultadoPromedio"></p>
+                        </div>
+                    </div>
+                    <!--*********************************Media*********************************************-->
+                    <div class="card-item">
+                        <h3>Mediana</h3>
+                        <div class="contenedor">
+                            <label for="inputMediana">Ingresa tus datos: </label>
+                            <input id="inputMediana" type="text" placeholder="Ej: 20, 10, 50" >
+                            <button type="button" onclick="calcularMediana()">Calcular la mediana</button>
+                            <p id="resultadoMediana"></p>
+                        </div>
+                    </div>
+                    <!--*********************************Moda*********************************************-->
+                    <div class="card-item">
+                        <h3>Moda</h3>
+                        <div class="contenedor">
+                            <label for="inputModa">Ingresa tus datos: </label>
+                            <input id="inputModa" type="text" placeholder="Ej: 20, 10, 50" >
+                            <button type="button" onclick="calcularModa()">Calcular la moda</button>
+                            <p id="listaCapturadaModa"></p>
+                            <p id="resultadoModa"></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
     <script src="./script.js"></script>
 </body>
 </html>
